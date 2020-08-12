@@ -1,0 +1,21 @@
+os: linux
+dist: trusty
+language: cpp
+compiler: gcc
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-7
+      - g++-7
+      - cmake
+script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      export CC=gcc-7 ;
+      export CXX=g++-7 ;
+    fi
+    # Check versions of gcc, g++ and cmake
+  - gcc -v && g++ -v && cmake --version
+deploy:
+  github-token: $GITHUB_TOKEN
