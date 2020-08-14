@@ -17,10 +17,14 @@ Qure RMS will primarily help store owners by providing multiple services in one 
 One of the highlights of this project is that the user interface and database can be swapped with other frameworks/dbms by implementing the domain provided interfaces.
 
 For this repo, we're using:
-- Language: C++ >11
+- Language: C++17
+- Compiler: gcc
 - Framework: Qt
 - Database: SQLite
 - Build system: CMake
+- Profiling: gprof
+- Libraries: STL
+- Code coverage: gtest/gcov (to be applied soon)
 
 ---
 
