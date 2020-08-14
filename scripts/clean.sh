@@ -1,12 +1,11 @@
 #!/bin/sh
-shopt -s extglob
 
 # Clean bins
 cd ../packages/bin
-rm !(".gitignore")
-rm -rf CMakeFiles
+ls -Q | grep -v .gitignore | xargs rm -rf
 
-# Clean lib
+# Clean libs
 cd ../lib
-rm !(".gitignore")
-rm -rf CMakeFiles
+ls -Q | grep -v .gitignore | xargs rm -rf
+
+echo "Cleaned!"

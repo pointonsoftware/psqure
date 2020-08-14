@@ -1,10 +1,8 @@
 # Qure RMS
 
-![qure](/resources/brand/qure_09_20.png?raw=true "qure")
-
-
-> Your best Pharmacy Management Software!
-
+<p align="center">
+  <img width="220" height="90" src="/resources/brand/qure_09_20.png">
+</p>
 
 ---
 
