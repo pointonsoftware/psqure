@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # Build core lib
-cd $TRAVIS_BUILD_DIR
-cd packages/lib
+cd $TRAVIS_BUILD_DIR/packages/lib
 cmake ../../domain 
 make
 
