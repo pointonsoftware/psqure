@@ -1,10 +1,8 @@
 # Qure RMS
 
-![qure](/resources/brand/qure_09_20.png?raw=true "qure")
-
-
-> Your best Pharmacy Management Software!
-
+<p align="center">
+  <img width="220" height="90" src="/resources/brand/qure_09_20.png">
+</p>
 
 ---
 
@@ -16,7 +14,7 @@ Qure RMS will primarily help Pharmacy owners and managers by providing multiple 
 
 One of the highlights of this project is that the user interface and database can be swapped with other frameworks/dbms by implementing the domain provided interfaces.
 
-For this repo, we're using:
+For this repo, we are using:
 - Language: C++17
 - Compiler: gcc-7
 - Framework: Qt

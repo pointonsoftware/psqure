@@ -1,29 +1,44 @@
+# Copyright (C) Pointon Software - All Rights Reserved
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+# Written by Ben Ziv <pointonsoftware@gmail.com>, August 2020
+
+# Configuration
 language: cpp
 compiler: gcc
 dist: trusty
 
-env:
-  global:
-    # Global build options and C++ flags
-    - CXX_FLAGS="-Wall -pedantic -Werror -Wno-variadic-macros -Wno-long-long -Wno-shadow -pg"
+#env:
+  #global:
     # Misc, we will use this once we setup unit tests
     #- RUN_TESTS=true
     #- COVERAGE=false
 
-before_install:
-  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - sudo apt-get update -qq
+# Build Matrix
+matrix:
+  include:
 
-install:
-  - sudo apt-get install cmake
-  - sudo apt-get install -qq g++-7
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
-
-script:
+  # cppcheck
+  - os: linux
+    addons:
+      apt:
+        packages:
+          - cppcheck
+    script:
+          # Run static analyzer
+          - cppcheck --quiet --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem .
+  
   # Build
-  - scripts/ci_build.sh
-  # Produce the gprof log
-  - scripts/ci_profiling.sh
+  - os: linux
+    addons:
+      apt:
+        packages:
+          - cmake
+    script:
+          - scripts/ci_build.sh
+          # Produce the gprof log
+          - scripts/ci_profiling.sh
+
 
 after_success:
   - echo "Successful!"
