@@ -1,7 +1,4 @@
-# Compiled Object files
-*.o
-
-# CMakeFiles
-*.cmake
-*.txt
-CMakeFiles/
+# Ignore everything
+*
+*/
+!.gitignore

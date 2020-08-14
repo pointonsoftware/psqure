@@ -5,7 +5,7 @@ dist: trusty
 env:
   global:
     # Global build options and C++ flags
-    - CXX_FLAGS="-Wall -pedantic -Werror -Wno-variadic-macros -Wno-long-long -Wno-shadow"
+    - CXX_FLAGS="-Wall -pedantic -Werror -Wno-variadic-macros -Wno-long-long -Wno-shadow -pg"
     # Misc, we will use this once we setup unit tests
     #- RUN_TESTS=true
     #- COVERAGE=false
@@ -23,9 +23,9 @@ install:
 
 script:
   # Build
-  - scripts/build.sh
+  - scripts/ci_build.sh
   # Produce the gprof log
-  - scripts/profiling.sh
+  - scripts/ci_profiling.sh
 
 after_success:
   - echo "Successful!"
