@@ -8,8 +8,8 @@ language: cpp
 compiler: gcc
 dist: trusty
 
-env:
-  global:
+#env:
+  #global:
     # Misc, we will use this once we setup unit tests
     #- RUN_TESTS=true
     #- COVERAGE=false
@@ -17,17 +17,6 @@ env:
 # Build Matrix
 matrix:
   include:
-
-  # Git Check
-  - os: linux
-    script:
-      - |
-        if [[ -n $(git diff --check HEAD^) ]]; then
-          echo "You must remove whitespace before submitting a pull request"
-          echo ""
-          git diff --check HEAD^
-          exit -1
-        fi
 
   # cppcheck
   - os: linux
@@ -37,7 +26,7 @@ matrix:
           - cppcheck
     script:
           # Run static analyzer
-          - cppcheck --quiet --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem
+          - cppcheck --quiet --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem .
   
   # Build
   - os: linux
