@@ -25,9 +25,9 @@ script:
   # Build
   - scripts/build.sh
   # Run exe
-  - ./qure
+  - ./$TRAVIS_BUILD_DIR/packages/bin/qure
   # produce the gprof log
-  - gprof ./qure > gprof.log
+  - gprof ./$TRAVIS_BUILD_DIR/packages/bin/qure > gprof.log
   - head gprof.log -n 100
 
 after_success:
