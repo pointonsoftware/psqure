@@ -1,14 +1,14 @@
 # Qure RMS
 
-![qure](https://photos.app.goo.gl/ir28vDR4sHeR9p3J7)
+![qure](/resources/brand/qure_09_20.png?raw=true "qure")
 
 
-> Pharmacy POS
+> Your best Pharmacy Management Software!
 
 
 ---
 
-Qure RMS will primarily help store owners by providing multiple services in one place, streamlining the process of running a store. Everyday tasks such as managing and buying inventory, scheduling employee shifts, and keeping track of finances are easily completed.
+Qure RMS will primarily help Pharmacy owners and managers by providing multiple services in one place, streamlining the process of running a store. Everyday tasks such as managing and buying inventory, scheduling employee shifts, and keeping track of finances are easily completed.
 
 ---
 
@@ -18,7 +18,7 @@ One of the highlights of this project is that the user interface and database ca
 
 For this repo, we're using:
 - Language: C++17
-- Compiler: gcc
+- Compiler: gcc-7
 - Framework: Qt
 - Database: SQLite
 - Build system: CMake
@@ -40,7 +40,9 @@ You can clone the repository to a local destination using git:
 
 ### How to build
 
-todo
+- Go to psqure/scripts folder
+- Run `build.sh`
+- Generated/output files are in psqure/packages folder
 
 ---
 
