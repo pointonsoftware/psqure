@@ -51,7 +51,7 @@ matrix:
           - scripts/ci_profiling.sh
 
 
- after_success:
+after_success:
   - echo "Successful!"
 
 after_failure:
